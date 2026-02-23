@@ -269,7 +269,7 @@ contactForm.addEventListener('submit', async function (e) {
       setTimeout(() => formSuccess.classList.remove('show'), 5000);
     } else {
       const result = await response.json();
-      alert(`Oops! There was a problem: ${result.message}`);
+      alert(`Oops! There was a problem: ${result.message}\n\nTechnical Details: ${result.error || 'Check Vercel logs'}`);
     }
   } catch (error) {
     alert("Oops! There was a problem submitting your form.");

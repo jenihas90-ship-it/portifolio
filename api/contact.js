@@ -1,7 +1,9 @@
+import nodemailer from 'nodemailer';
+
 export default async function handler(req, res) {
   // Add CORS headers so the form can be submitted from any origin (or just your domain)
   res.setHeader('Access-Control-Allow-Credentials', true);
-  res.setHeader('Access-Control-Allow-Origin', '*'); 
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
   res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
 
@@ -21,10 +23,6 @@ export default async function handler(req, res) {
     return res.status(400).json({ message: 'Name, email, and message are required' });
   }
 
-  // Import nodemailer dynamically or require it depending on how the build works natively, 
-  // but using require is safer in vercel older node environments unless type="module" is set
-  const nodemailer = require('nodemailer');
-
   try {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -36,7 +34,7 @@ export default async function handler(req, res) {
 
     const mailOptions = {
       from: `"\${name}" <\${email}>`, // Use the submitter's info in the "from" display 
-      replyTo: email, 
+      replyTo: email,
       to: 'jenihas90@gmail.com', // Your receiving email
       subject: `Portfolio Contact: \${subject || 'New Message'}`,
       text: `
