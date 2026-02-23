@@ -8,7 +8,7 @@
 // ============================================================
 // CUSTOM CURSOR
 // ============================================================
-const cursorDot     = document.getElementById('cursorDot');
+const cursorDot = document.getElementById('cursorDot');
 const cursorOutline = document.getElementById('cursorOutline');
 
 let mouseX = 0, mouseY = 0;
@@ -18,7 +18,7 @@ document.addEventListener('mousemove', (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
   cursorDot.style.left = mouseX + 'px';
-  cursorDot.style.top  = mouseY + 'px';
+  cursorDot.style.top = mouseY + 'px';
 });
 
 // Smooth outline follow
@@ -26,7 +26,7 @@ function animateCursor() {
   outlineX += (mouseX - outlineX) * 0.14;
   outlineY += (mouseY - outlineY) * 0.14;
   cursorOutline.style.left = outlineX + 'px';
-  cursorOutline.style.top  = outlineY + 'px';
+  cursorOutline.style.top = outlineY + 'px';
   requestAnimationFrame(animateCursor);
 }
 animateCursor();
@@ -52,7 +52,7 @@ window.addEventListener('scroll', () => {
 // HAMBURGER / MOBILE MENU
 // ============================================================
 const hamburger = document.getElementById('hamburger');
-const navLinks  = document.getElementById('navLinks');
+const navLinks = document.getElementById('navLinks');
 
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('open');
@@ -72,8 +72,8 @@ navLinks.querySelectorAll('.nav-link').forEach(link => {
 // ============================================================
 // ACTIVE NAV LINK (INTERSECTION OBSERVER)
 // ============================================================
-const sections    = document.querySelectorAll('section[id]');
-const navLinkEls  = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id]');
+const navLinkEls = document.querySelectorAll('.nav-link');
 
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -150,10 +150,10 @@ revealEls.forEach(el => revealObserver.observe(el));
 function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
 
 function animateCounter(el, target, duration = 1800) {
-  const start  = performance.now();
+  const start = performance.now();
   const update = (now) => {
     const progress = Math.min((now - start) / duration, 1);
-    el.textContent  = Math.round(easeOutQuart(progress) * target);
+    el.textContent = Math.round(easeOutQuart(progress) * target);
     if (progress < 1) requestAnimationFrame(update);
   };
   requestAnimationFrame(update);
@@ -174,7 +174,7 @@ statNums.forEach(el => counterObserver.observe(el));
 // ============================================================
 // SKILLS TABS
 // ============================================================
-const tabBtns   = document.querySelectorAll('.tab-btn');
+const tabBtns = document.querySelectorAll('.tab-btn');
 const skillPanels = document.querySelectorAll('.skills-panel');
 
 tabBtns.forEach(btn => {
@@ -218,12 +218,12 @@ document.querySelectorAll('.skills-panel').forEach(panel => skillBarObserver.obs
 // SMOOTH SCROLL (with nav offset)
 // ============================================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
+  anchor.addEventListener('click', function (e) {
     const targetId = this.getAttribute('href').slice(1);
     const targetEl = document.getElementById(targetId);
     if (!targetEl) return;
     e.preventDefault();
-    const navH    = navbar.getBoundingClientRect().height;
+    const navH = navbar.getBoundingClientRect().height;
     const targetY = targetEl.getBoundingClientRect().top + window.scrollY - navH - 16;
     window.scrollTo({ top: targetY, behavior: 'smooth' });
   });
@@ -240,25 +240,44 @@ window.addEventListener('scroll', () => {
 // ============================================================
 // CONTACT FORM
 // ============================================================
-const contactForm  = document.getElementById('contactForm');
-const formSuccess  = document.getElementById('formSuccess');
+const contactForm = document.getElementById('contactForm');
+const formSuccess = document.getElementById('formSuccess');
 
-contactForm.addEventListener('submit', function(e) {
+contactForm.addEventListener('submit', async function (e) {
   e.preventDefault();
 
-  const btn  = this.querySelector('button[type="submit"]');
+  const btn = this.querySelector('button[type="submit"]');
   const span = btn.querySelector('span');
   btn.disabled = true;
   span.textContent = 'Sending…';
 
-  // Simulate async send
-  setTimeout(() => {
-    contactForm.reset();
+  const formData = new FormData(contactForm);
+  const data = Object.fromEntries(formData.entries());
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      contactForm.reset();
+      formSuccess.classList.add('show');
+      setTimeout(() => formSuccess.classList.remove('show'), 5000);
+    } else {
+      const result = await response.json();
+      alert(`Oops! There was a problem: ${result.message}`);
+    }
+  } catch (error) {
+    alert("Oops! There was a problem submitting your form.");
+    console.error(error);
+  } finally {
     btn.disabled = false;
     span.textContent = 'Send Message';
-    formSuccess.classList.add('show');
-    setTimeout(() => formSuccess.classList.remove('show'), 5000);
-  }, 1600);
+  }
 });
 
 // ============================================================
@@ -268,13 +287,13 @@ const projectCards = document.querySelectorAll('.project-card');
 
 projectCards.forEach(card => {
   card.addEventListener('mousemove', (e) => {
-    const rect   = card.getBoundingClientRect();
-    const cx     = rect.left + rect.width  / 2;
-    const cy     = rect.top  + rect.height / 2;
-    const dx     = (e.clientX - cx) / (rect.width  / 2);
-    const dy     = (e.clientY - cy) / (rect.height / 2);
+    const rect = card.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const dx = (e.clientX - cx) / (rect.width / 2);
+    const dy = (e.clientY - cy) / (rect.height / 2);
     const rotateX = -dy * 4;
-    const rotateY =  dx * 4;
+    const rotateY = dx * 4;
     card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
   });
 
@@ -306,7 +325,7 @@ document.addEventListener('mousemove', (e) => {
 const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&';
 function scramble(el, original, duration = 600) {
   const startTime = performance.now();
-  const len       = original.length;
+  const len = original.length;
 
   function update(now) {
     const elapsed = now - startTime;
@@ -351,9 +370,9 @@ yearEls.forEach(el => (el.textContent = y));
 // NAV LINK HOVER RIPPLE (micro-interaction)
 // ============================================================
 navLinkEls.forEach(link => {
-  link.addEventListener('click', function(e) {
-    const ripple    = document.createElement('span');
-    const rect      = this.getBoundingClientRect();
+  link.addEventListener('click', function (e) {
+    const ripple = document.createElement('span');
+    const rect = this.getBoundingClientRect();
     ripple.style.cssText = `
       position:absolute; border-radius:50%;
       width:4px; height:4px;
