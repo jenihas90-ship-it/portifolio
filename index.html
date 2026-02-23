@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jenihas Getachew | Senior Web Developer</title>
+  <meta name="description"
+    content="Alex Carter — Senior Full-Stack Web Developer crafting premium digital experiences. Available for freelance & full-time opportunities." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-outline" id="cursorOutline"></div>
+
+  <!-- Noise Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="logo">
+        <span class="logo-bracket">&lt;</span>JG<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn-hire">Hire Me</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+    <div class="hero-orb orb-3"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for work
+      </div>
+      <h1 class="hero-title">
+        <span class="line-1">Crafting Digital</span>
+        <span class="line-2 gradient-text">Masterpieces</span>
+        <span class="line-3">That Convert.</span>
+      </h1>
+      <p class="hero-sub">
+        Hi, I'm <strong>Jenihas Getachew</strong> — a Senior Full‑Stack Developer with 7+ years building
+        blazing-fast, pixel-perfect web applications that users love.
+      </p>
+      <div class="hero-typed-wrap">
+        <span class="typed-prefix">$ </span>
+        <span class="typed-text" id="typedText"></span>
+        <span class="typed-cursor">|</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">View My Work <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg></a>
+        <a href="#contact" class="btn-secondary">Let's Talk</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-target="7">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Years Exp.</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="120">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Projects Done</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="98">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">Client Satisfaction</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="code-card glass-card">
+        <div class="code-card-header">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="code-filename">developer.js</span>
+        </div>
+        <pre class="code-snippet"><code><span class="kw">const</span> <span class="var">developer</span> = {
+  <span class="key">name</span>: <span class="str">"Jenihas Getachew"</span>,
+  <span class="key">role</span>: <span class="str">"Full-Stack Dev"</span>,
+  <span class="key">skills</span>: [
+    <span class="str">"React"</span>, <span class="str">"Node.js"</span>,
+    <span class="str">"TypeScript"</span>, <span class="str">"AWS"</span>
+  ],
+  <span class="key">passion</span>: <span class="str">"Building things"</span>,
+  <span class="key">coffee</span>: <span class="num">Infinity</span> ☕
+};</code></pre>
+      </div>
+      <div class="floating-badge badge-react">⚛ React</div>
+      <div class="floating-badge badge-node">🟢 Node.js</div>
+      <div class="floating-badge badge-ts">📘 TypeScript</div>
+      <div class="floating-badge badge-aws">☁ AWS</div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-tag">// who I am</div>
+      <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+
+      <div class="about-grid">
+        <div class="about-image-wrap reveal">
+          <div class="about-image-frame">
+            <div class="about-avatar">
+              <img src="profile.jpg" alt="Jenihas Getachew"
+                style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%;display:block;" />
+            </div>
+            <div class="expbadge glass-card">
+              <span class="expbadge-num">7+</span>
+              <span class="expbadge-text">Years of<br>Excellence</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content reveal">
+          <p class="about-intro">I turn complex problems into elegant, scalable digital solutions. My approach combines
+            <strong>technical precision</strong> with <strong>creative thinking</strong> — delivering products that
+            don't just work, but <em>wow</em>.
+          </p>
+          <p class="about-text">From startups to Fortune 500 companies, I've architected systems handling millions of
+            users, led cross-functional teams, and shipped products that have redefined user expectations. I specialize
+            in the modern JavaScript ecosystem and cloud-native architectures.</p>
+
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>Clean, maintainable, well-documented code</span>
+            </div>
+            <div class="highlight-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>Performance-first, accessibility-aware development</span>
+            </div>
+            <div class="highlight-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>Agile workflow, on-time delivery, transparent communication</span>
+            </div>
+            <div class="highlight-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>Pixel-perfect UI implementation from Figma designs</span>
+            </div>
+          </div>
+
+          <div class="about-actions">
+            <a href="#contact" class="btn-primary">Get In Touch <svg width="18" height="18" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg></a>
+            <a href="#" class="btn-ghost" download>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+              </svg>
+              Download CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="section section-dark">
+    <div class="container">
+      <div class="section-tag">// what I use</div>
+      <h2 class="section-title">My <span class="gradient-text">Tech Stack</span></h2>
+      <p class="section-sub">A curated toolkit I've mastered over years of professional development</p>
+
+      <div class="skills-tabs">
+        <button class="tab-btn active" data-tab="frontend">Frontend</button>
+        <button class="tab-btn" data-tab="backend">Backend</button>
+        <button class="tab-btn" data-tab="tools">Tools & DevOps</button>
+      </div>
+
+      <div class="skills-panels">
+        <div class="skills-panel active" id="tab-frontend">
+          <div class="skill-cards">
+            <div class="skill-card reveal" data-level="98">
+              <div class="skill-icon">⚛</div>
+              <div class="skill-info"><span class="skill-name">React / Next.js</span><span
+                  class="skill-level">Expert</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--pct:98%"></div>
+              </div>
+            </div>
+            <div class="skill-card reveal" data-level="95">
+              <div class="skill-icon">📘</div>
+              <div class="skill-info"><span class="skill-name">TypeScript</span><span class="skill-level">Expert</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--pct:95%"></div>
+              </div>
+            </div>
+            <div class="skill-card reveal" data-level="90">
+              <div class="skill-icon">🎨</div>
+              <div class="skill-info"><span class="skill-name">CSS / Tailwind</span><span
+                  class="skill-level">Expert</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--pct:90%"></div>
+              </div>
+            </div>
+            <div class="skill-card reveal" data-level="85">
+              <div class="skill-icon">✨</div>
+              <div class="skill-info"><span class="skill-name">Vue / Nuxt</span><span
+                  class="skill-level">Advanced</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--pct:85%"></div>
+              </div>
+            </div>
+            <div class="skill-card reveal" data-level="80">
+              <div class="skill-icon">💨</div>
+              <div class="skill-info"><span class="skill-name">Three.js / WebGL</span><span
+                  class="skill-level">Advanced</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--pct:80%"></div>
+              </div>
+            </div>
+            <div class="skill-card reveal" data-level="88">
+              <div class="skill-icon">🅰</div>
+              <div class="skill-info"><span class="skill-name">Angular</span><span class="skill-level">Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--pct:88%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-panel" id="tab-backend">
+          <div class="skill-cards">
+            <div class="skill-card reveal" data-level="95">
+              <div class="skill-icon">🟢</div>
+              <div class="skill-info"><span class="skill-name">Node.js / Express</span><span
+                  class="skill-level">Expert</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--pct:95%"></div>
+              </div>
+            </div>
+            <div class="skill-card reveal" data-level="88">
+              <div class="skill-icon">🐍</div>
+              <div class="skill-info"><span class="skill-name">Python / Django</span><span
+                  class="skill-level">Advanced</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--pct:88%"></div>
+              </div>
+            </div>
+            <div class="skill-card reveal" data-level="85">
+              <div class="skill-icon">🗄</div>
+              <div class="skill-info"><span class="skill-name">PostgreSQL / MySQL</span><span
+                  class="skill-level">Advanced</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--pct:85%"></div>
+              </div>
+            </div>
+            <div class="skill-card reveal" data-level="82">
+              <div class="skill-icon">🍃</div>
+              <div class="skill-info"><span class="skill-name">MongoDB</span><span class="skill-level">Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--pct:82%"></div>
+              </div>
+            </div>
+            <div class="skill-card reveal" data-level="90">
+              <div class="skill-icon">🔌</div>
+              <div class="skill-info"><span class="skill-name">GraphQL / REST APIs</span><span
+                  class="skill-level">Expert</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--pct:90%"></div>
+              </div>
+            </div>
+            <div class="skill-card reveal" data-level="78">
+              <div class="skill-icon">⚡</div>
+              <div class="skill-info"><span class="skill-name">Redis / Caching</span><span
+                  class="skill-level">Proficient</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--pct:78%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-panel" id="tab-tools">
+          <div class="skill-cards">
+            <div class="skill-card reveal" data-level="92">
+              <div class="skill-icon">☁</div>
+              <div class="skill-info"><span class="skill-name">AWS / GCP</span><span class="skill-level">Expert</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--pct:92%"></div>
+              </div>
+            </div>
+            <div class="skill-card reveal" data-level="88">
+              <div class="skill-icon">🐳</div>
+              <div class="skill-info"><span class="skill-name">Docker / K8s</span><span
+                  class="skill-level">Advanced</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--pct:88%"></div>
+              </div>
+            </div>
+            <div class="skill-card reveal" data-level="95">
+              <div class="skill-icon">🔀</div>
+              <div class="skill-info"><span class="skill-name">Git / GitHub</span><span
+                  class="skill-level">Expert</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--pct:95%"></div>
+              </div>
+            </div>
+            <div class="skill-card reveal" data-level="85">
+              <div class="skill-icon">🚀</div>
+              <div class="skill-info"><span class="skill-name">CI/CD Pipelines</span><span
+                  class="skill-level">Advanced</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--pct:85%"></div>
+              </div>
+            </div>
+            <div class="skill-card reveal" data-level="80">
+              <div class="skill-icon">🎭</div>
+              <div class="skill-info"><span class="skill-name">Figma / Design</span><span
+                  class="skill-level">Advanced</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--pct:80%"></div>
+              </div>
+            </div>
+            <div class="skill-card reveal" data-level="82">
+              <div class="skill-icon">🧪</div>
+              <div class="skill-info"><span class="skill-name">Jest / Cypress</span><span
+                  class="skill-level">Advanced</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--pct:82%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-tag">// what I've built</div>
+      <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+      <p class="section-sub">A selection of projects that demonstrate my range and depth</p>
+
+      <div class="projects-grid">
+
+        <div class="project-card project-featured reveal">
+          <div class="project-img" style="background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);">
+            <div class="project-mockup">
+              <div class="browser-bar"><span class="bb-dot"></span><span class="bb-dot"></span><span
+                  class="bb-dot"></span></div>
+              <div class="browser-content">
+                <div class="mock-nav"></div>
+                <div class="mock-hero"></div>
+                <div class="mock-cards">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="ptag">React</span>
+              <span class="ptag">Node.js</span>
+              <span class="ptag">PostgreSQL</span>
+              <span class="ptag">AWS</span>
+            </div>
+            <h3 class="project-title">NexCommerce Platform</h3>
+            <p class="project-desc">A full-scale e-commerce platform handling 50K+ daily transactions. Features
+              real-time inventory, AI-powered recommendations, and a blazing-fast checkout flow with Stripe integration.
+            </p>
+            <div class="project-metrics">
+              <div class="metric"><span class="metric-val">50K+</span><span class="metric-lab">Daily Users</span></div>
+              <div class="metric"><span class="metric-val">99.9%</span><span class="metric-lab">Uptime</span></div>
+              <div class="metric"><span class="metric-val">1.2s</span><span class="metric-lab">Avg Load</span></div>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn-project"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                </svg> Live Demo</a>
+              <a href="#" class="btn-project-ghost"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                </svg> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img" style="background: linear-gradient(135deg, #0a2342, #0d6efd30);">
+            <div class="project-mockup">
+              <div class="browser-bar"><span class="bb-dot"></span><span class="bb-dot"></span><span
+                  class="bb-dot"></span></div>
+              <div class="browser-content">
+                <div class="mock-dashboard">
+                  <div class="mock-sidebar"></div>
+                  <div class="mock-main">
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="ptag">Next.js</span>
+              <span class="ptag">TypeScript</span>
+              <span class="ptag">GraphQL</span>
+            </div>
+            <h3 class="project-title">AnalytiX Dashboard</h3>
+            <p class="project-desc">Real-time SaaS analytics dashboard with live data streaming, customizable widgets,
+              and AI-powered insights.</p>
+            <div class="project-links">
+              <a href="#" class="btn-project">Live Demo</a>
+              <a href="#" class="btn-project-ghost">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img" style="background: linear-gradient(135deg, #1a0533, #6d28d930);">
+            <div class="project-mockup">
+              <div class="browser-bar"><span class="bb-dot"></span><span class="bb-dot"></span><span
+                  class="bb-dot"></span></div>
+              <div class="browser-content">
+                <div class="mock-chat">
+                  <div class="mock-chat-bubble left"></div>
+                  <div class="mock-chat-bubble right"></div>
+                  <div class="mock-chat-bubble left short"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="ptag">React</span>
+              <span class="ptag">Socket.io</span>
+              <span class="ptag">Redis</span>
+            </div>
+            <h3 class="project-title">PulseChat — Real-time Messenger</h3>
+            <p class="project-desc">End-to-end encrypted messaging platform with video calls, file sharing, and presence
+              indicators. 10K+ active users.</p>
+            <div class="project-links">
+              <a href="#" class="btn-project">Live Demo</a>
+              <a href="#" class="btn-project-ghost">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img" style="background: linear-gradient(135deg, #0d2d1a, #16a34a30);">
+            <div class="project-mockup">
+              <div class="browser-bar"><span class="bb-dot"></span><span class="bb-dot"></span><span
+                  class="bb-dot"></span></div>
+              <div class="browser-content">
+                <div class="mock-map"></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="ptag">Vue.js</span>
+              <span class="ptag">Python</span>
+              <span class="ptag">Docker</span>
+            </div>
+            <h3 class="project-title">GreenRoute — Eco Logistics</h3>
+            <p class="project-desc">Carbon-footprint-aware route optimization for logistics companies. Reduced client
+              emissions by 35% on average.</p>
+            <div class="project-links">
+              <a href="#" class="btn-project">Live Demo</a>
+              <a href="#" class="btn-project-ghost">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="projects-more">
+        <a href="https://github.com" target="_blank" class="btn-ghost">
+          View All Projects on GitHub
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience" class="section section-dark">
+    <div class="container">
+      <div class="section-tag">// where I've worked</div>
+      <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Senior Full-Stack Developer</h3>
+                <span class="timeline-company">🏢 TechNova Inc. — Addis Ababa, Ethiopia</span>
+              </div>
+              <span class="timeline-date">2022 — Present</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Architected a microservices platform serving 2M+ users, reducing infrastructure costs by 40%</li>
+              <li>Led a team of 8 developers, establishing coding standards and CI/CD workflows</li>
+              <li>Spearheaded migration from monolith to serverless AWS Lambda architecture</li>
+              <li>Delivered 99.95% SLA uptime for core payment processing services</li>
+            </ul>
+            <div class="timeline-tags"><span>React</span><span>Node.js</span><span>AWS</span><span>Kubernetes</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Full-Stack Developer</h3>
+                <span class="timeline-company">🚀 StartUp Labs — Remote</span>
+              </div>
+              <span class="timeline-date">2020 — 2022</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Built and launched 3 SaaS products from 0 to $1M ARR within 18 months</li>
+              <li>Implemented real-time features with WebSockets, improving user engagement by 60%</li>
+              <li>Optimized database queries, achieving 5x performance improvements</li>
+            </ul>
+            <div class="timeline-tags"><span>Vue.js</span><span>Python</span><span>PostgreSQL</span><span>Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Junior Web Developer</h3>
+                <span class="timeline-company">🌐 Digital Agency Co. — Remote</span>
+              </div>
+              <span class="timeline-date">2018 — 2020</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Developed 30+ client websites with responsive designs and 95+ Lighthouse scores</li>
+              <li>Delivered pixel-perfect implementations of Figma designs across all major browsers</li>
+              <li>Introduced automated testing, reducing QA time by 50%</li>
+            </ul>
+            <div class="timeline-tags"><span>JavaScript</span><span>WordPress</span><span>React</span><span>SCSS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <div class="section-tag">// what others say</div>
+      <h2 class="section-title">Client <span class="gradient-text">Testimonials</span></h2>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card glass-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Jenihas is exceptional. The platform he built for us exceeded every expectation —
+            scalable, beautiful, and delivered on time. We saw a 40% revenue jump in the first quarter."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg,#6366f1,#8b5cf6)">S</div>
+            <div>
+              <span class="author-name">Sarah Mitchell</span>
+              <span class="author-title">CEO, NexCommerce</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card glass-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Jenihas transformed our legacy codebase into a modern, maintainable system. His
+            technical depth, communication, and professionalism are unmatched."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg,#0ea5e9,#38bdf8)">J</div>
+            <div>
+              <span class="author-name">James Hoffman</span>
+              <span class="author-title">CTO, AnalytiX</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card glass-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Working with Jenihas was a game-changer. He brought ideas to the table we hadn't
+            considered and delivered a product 20% better than what we originally scoped."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg,#10b981,#34d399)">M</div>
+            <div>
+              <span class="author-name">Maria Santos</span>
+              <span class="author-title">Product Lead, GreenRoute</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section section-dark">
+    <div class="container">
+      <div class="section-tag">// let's connect</div>
+      <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+      <p class="section-sub">Have a project in mind? Let's build something great together.</p>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-item glass-card">
+            <div class="contact-icon">📧</div>
+            <div>
+              <span class="contact-label">Email</span>
+              <a href="mailto:jenihas@jenihasgetachew.dev" class="contact-value">jenihas@jenihasgetachew.dev</a>
+            </div>
+          </div>
+          <div class="contact-item glass-card">
+            <div class="contact-icon">📍</div>
+            <div>
+              <span class="contact-label">Location</span>
+              <span class="contact-value">Addis Ababa, Ethiopia (Remote OK)</span>
+            </div>
+          </div>
+          <div class="contact-item glass-card">
+            <div class="contact-icon">💼</div>
+            <div>
+              <span class="contact-label">Availability</span>
+              <span class="contact-value avail"> Open to Opportunities</span>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="CodePen">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.144 13.067v-2.134L16.55 12zm1.276 1.194a.628.628 0 01-.006.083l-.005.028-.011.053-.01.031c-.005.016-.01.031-.017.047l-.014.03a.78.78 0 01-.021.043l-.019.03a.57.57 0 01-.08.1l-.026.025a.602.602 0 01-.036.03l-.029.022-.01.008-6.782 4.522a.637.637 0 01-.708 0L4.864 14.82l-.01-.008a.599.599 0 01-.065-.052l-.026-.025-.032-.034-.021-.028a.588.588 0 01-.067-.11l-.014-.031a.644.644 0 01-.017-.047l-.01-.031-.01-.053-.006-.028a.628.628 0 01-.006-.083V9.739c0-.028.002-.055.006-.083l.005-.027.011-.054.01-.03a.574.574 0 01.12-.217l.031-.034.026-.025a.62.62 0 01.065-.052l.01-.008 6.782-4.521a.638.638 0 01.708 0l6.782 4.521.01.008.03.022.035.03.026.025a.545.545 0 01.08.1l.019.03a.633.633 0 01.021.043l.014.03c.007.016.012.031.017.047l.01.031.01.054.006.027a.619.619 0 01.006.083zM12 0C5.373 0 0 5.372 0 12 0 18.627 5.373 24 12 24c6.628 0 12-5.372 12-12 0-6.627-5.372-12-12-12m0 10.492L9.745 12 12 13.508 14.255 12zm.638 4.124v2.975l4.996-3.33-2.232-1.493zm-1.276 0l-2.764 1.152-2.232 1.493 4.996 3.33zm5.506-4.9l-4.996-3.33v2.975l2.764 1.152zm-9.244 0l2.232 1.797 2.764-1.152V7.386zm-2.064 0v2.134L7.45 12l-1.594-1.067z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form glass-card reveal" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required />
+          </div>
+          <div class="form-group">
+            <label for="budget">Project Budget</label>
+            <select id="budget" name="budget">
+              <option value="">Select budget range</option>
+              <option>$1,000 – $5,000</option>
+              <option>$5,000 – $15,000</option>
+              <option>$15,000 – $50,000</option>
+              <option>$50,000+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."
+              required></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full">
+            <span>Send Message</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="22" y1="2" x2="11" y2="13" />
+              <polygon points="22 2 15 22 11 13 2 9 22 2" />
+            </svg>
+          </button>
+          <div class="form-success" id="formSuccess">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            Message sent! I'll get back to you within 24 hours.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#hero" class="logo">
+          <span class="logo-bracket">&lt;</span>JG<span class="logo-bracket">/&gt;</span>
+        </a>
+        <p class="footer-tagline">Building the web, one pixel at a time.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+            </svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg></a>
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg></a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 Jenihas Getachew. Crafted with ❤️ and too much ☕</span>
+        <span class="footer-credit">All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#hero" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
